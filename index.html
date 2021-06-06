@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'>
+	</script>
+</head>
+
+<body style="background-color:#cee7eb">
+	<script src="script.js">
+	</script>
+	<h1 id="labelInput" style="color:#1f1f1f"><strong>Text Recognition</strong></h1>
+	<canvas id="mainCanvas" width="500" height="500" style="border:1px solid #1f1f1f;"></canvas>
+	<div width="10" style="margin-left:550px">
+		<label class="custom-field one">
+			<input id="inputStroke" class="form-control" type="text" value="10" style="margin-top:290px" required style="outline-width: 0;"> <span class="placeholder" style="margin-top:290px">Stroke</span> </label>
+	</div>
+	<div width="100" height="50" style="margin-left:550px">
+		<input type="color" id="colorInput" style="margin-top:15px" value="#1f1f1f"></input>
+	</div>
+	<div width="300" height="50" style="margin-left:550px">
+		<button id="recognizeButton" type="button" class="btn btn-outline-primary" style="margin-top:60px" onclick="recognizeDraw()">Predict</button>
+	</div>
+	<div width="300" height="50" style="margin-left:550px">
+		<button id="clearButton" type="button" onclick="clearCanvas()" class="btn btn-outline-success" style="margin-top:-170px">Clear</button>
+	</div>
+	<input type="file" id="inputImage" accept="image/*" onchange="recognizeInputImage()" style="color:#1f1f1f">
+	<p id="outputText" style="color:#1f1f1f"></p>
+</body>
+
+</html>
